@@ -1,0 +1,247 @@
+
+
+a = 100  # here a is variable ,and is data 
+print(a)
+
+
+hs <- 55
+xs <-56
+
+total <- hs+xs
+print(total)
+
+a ="100"
+
+
+
+# if condition 
+
+a =1
+if(a>10){
+  
+  print("a is greater than 100")
+}else{
+  
+  print("a is less than 100")
+}
+
+
+
+a =1
+if(a>10){
+  
+  print("a is greater than 100")
+}else if(a>20){
+  
+  print("a is less than 100")
+  
+}else{
+  
+  print("a is less than 100")
+  
+}
+
+
+#nested if 
+a =11
+b =33
+c =444
+if(a>b){
+  
+  
+   if(a>c){
+  
+     print('A is gt')   
+   }  else{
+     print('c is gt')   
+   }
+    
+  
+}else{
+  print('other')
+  print('other')   
+  print('other')   
+}
+  
+### if ladder 
+a =10
+
+ifelse(a %% 2 == 0,"even","odd")
+
+
+
+
+## loop : is iterator or repeation of statemet
+##  i. init 
+##  ii. condition 
+##  iii. increment /decrement
+## types : i. while ii. for 
+
+i <- 0   # init  
+while(i<10){ #condition 
+  
+  print(i)
+  i=i+1 #incrementer 
+}
+
+
+## print in revese order 
+
+i <- 10   # init  
+while(i>0){ #condition 
+  
+  print(i)
+  i=i-1 #incrementer 
+}
+
+
+# print all odd numbers between 3 to 40
+i =3
+while(i<30){
+  print(i)
+  i=i+2
+}
+
+## break : to terminate the looop 
+i =3
+while(i<30){
+  if(i%%5 == 0){
+    break
+  }
+  print(i)
+  i=i+2
+}
+
+
+# next: skip current iteration 
+# support of for loop only
+#### vector
+a<- 1:100
+a<- c(1:100)
+
+
+for(d in a){
+  if(d %% 8 ==0 ){
+    next
+  }
+  print(d)
+}
+
+
+
+
+## function :   is set of instructinos of command which is reusable 
+
+# function with no argument and no return type 
+add <- function(){
+  
+   print('hi')
+    print('hello')
+}
+
+
+add()
+
+# function with  argument and no return type 
+sub <- function(a,b){
+  
+  c =a-b
+  print(c)
+}
+
+sub(11,3)
+
+
+
+# function with  argument and  return 
+mul <- function(a,b){
+  
+  c <- a*b
+  return(c)
+}
+
+
+
+mul(11,3)
+
+
+
+# function with NO argument and  return 
+getCount <- function(){
+  c =111
+  return(c)
+}
+
+
+d = getCount()
+print(d)
+
+
+
+# type casting 
+
+
+
+
+## vector 
+a = c(1:100)
+d = c(11,22,2,33)
+length(d)
+
+max(d)
+min(d)
+mean(d)
+sum(d)
+
+# add new element 
+d <- append(d,100)
+
+seq(1,5,by=0.2)
+
+#access by index
+d[2]
+
+
+########### matrix 
+d = 1:9
+data  =matrix(d,nrow = 3,ncol = 3)
+
+##index
+data
+data[,2] # by col index
+data[1,] # by row index
+
+data[1,2] # by row index and col index
+
+
+
+#### data frame 
+id <- c(1,2,3,4,5)
+name <- c("test1","test2","test3","test4","test5")
+
+id
+name
+
+df =cbind(id,name)
+
+a = data.frame(id,name)
+
+length(a)  ## col count
+length(a[,1]) # row count
+
+
+
+##list : different data type 
+x <- list("a" = 2.5, "b" = TRUE, "c" = 1:3)
+
+x['a']
+x['b']
+x['c']
+
+
+ids <- 1:100
+x <- list("a" = 2.5, "b" = TRUE, "c" =ids)
+
+
+
+x <- factor(c("single", "married", "married", "single")); 
