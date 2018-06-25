@@ -1,0 +1,134 @@
+# function 
+add <- function(a,b){
+  
+  c = a+b
+  print(c)
+}
+#
+sub <- function(a,b){
+  
+  c = a-b
+  return(c) 
+}
+
+## break 
+v1 <- c(1:100)
+for(x in v1){
+    
+  if(x == 10){
+    break
+  }
+  print(x)
+}
+
+##
+v1 <- c(1:15)
+for(x in v1){
+  
+  if(x %% 4  == 0){
+    next
+  }
+  print(x)
+}
+
+ 
+### vector  : is one column of similar type data 
+id <- c(1:10)
+name <- c("nitin","jatin","divya","ayush","nidhi","rahul","chahat","raman","kshitiz","nitin")
+
+### data frame : is table (combination of row and column)
+emp = data.frame(id,name)
+
+emp$id 
+emp$name 
+emp[1,]  # SHOW 1ST ROW AND ALL COLUMNS
+emp[,1]  #  ALLL ROW AND  1ST COL
+emp[2,1] # 2ND ROW AND 1ST COL (R,C)
+
+### CBIND 
+v1<- c(1:5)
+v2<- c(11:15)
+
+v1
+v2
+cbind(v1,v2)
+
+### RBIND 
+v1
+v2
+rbind(v1,v2)
+
+## matrix : square
+v1<- c(1:9)
+
+matrix(v1,nrow = 3,ncol = 3)
+
+matrix(v1,nrow = 3,ncol = 3,byrow = TRUE)
+
+
+#################
+#ETL : EXTRACT (SOURCE) TRANSFORMATION (LOGIC/CONVERSION) LOAD (DESTINATIO)
+####################
+
+##READ DATA FROM CSV OR EXCE OR .TXT FILE 
+data = read.csv("C:/Users/vkumar15/Desktop/backup/bmi.csv")
+data$height
+data$weight
+max(data$weight)
+min(data$weight)
+sum(data$weight)
+mean(data$weight)
+
+##package : 
+#library(xlsx)
+#data = read.xlsx("C:\\Users\\vkumar15\\Desktop\\backup\\Health data.xlsx",sheetIndex = 1,header = TRUE)
+
+library(readxl)
+Health_data <- read_excel("C:/Users/vkumar15/Desktop/backup/Health data.xlsx",sheet = "")
+
+
+Health_data$PAYMENT
+
+sum(Health_data$PAYMENT)
+
+head(Health_data)
+
+### unique 
+unique(Health_data$HEALTH_PLAN)
+
+library("twitteR")
+
+consumer_key <- 'yBrWeERMyvyg0XtBxOgTkcnY7'
+consumer_secret <- 'fkdu59y8QmqBMae4WBY3ndqKs8SGW02y6dBk9siQVTw00LVKBC'
+access_token <- '919434545924935681-pm4kjsZhklseLCEIiQk9znOTGAcxMRE'
+access_secret <- 'GS1Mf8opgNeGhQtLalJnvzu9y0eBotCddgAJAG796Gtnj'
+
+
+setup_twitter_oauth(consumer_key, consumer_secret, access_token, access_secret)
+
+#pull data from tweet application to r 
+tweet  <- userTimeline("realDonaldTrump", n=20)
+
+
+
+
+### from text 
+
+
+emp  <- read.table("C:/Users/vkumar15/Desktop/emp.txt",sep = ",")
+##dbms
+#rdbms  : oracle, ms sql server, my sql server , ibmdb2
+LH7U05CG7300QJQ\DBS92
+SuperMarket
+product 
+## odbc : open database connectivity 
+## go to control panel -> go to administrative tool -> click on ODBC connection 
+
+library(RODBC)
+myconn <-odbcConnect("mytestcon")
+
+pundat <- sqlQuery(myconn, "select * from product")
+
+
+
+
