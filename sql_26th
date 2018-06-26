@@ -1,0 +1,56 @@
+--Creating Database--
+create database dbname
+
+create database test
+use test
+
+
+--Creating Table--
+create table tbname(
+column_name datatype,
+column_name datatype,
+column_name datatype)
+
+
+
+create table emp(
+id int,
+name varchar(30),
+age int,
+salary int)
+
+select * from emp
+
+--inserting records--
+insert into tbname values()
+
+insert into emp values(1,'aman',24,20000)
+insert into emp values(2,'mohit',25,25000)
+insert into emp values(3,'kush',24,26000)
+insert into emp values(4,'rohit',23,24000)
+
+
+--where--
+select * from emp where id=1
+
+
+--order by--
+select * from emp order by name
+select * from emp order by salary
+select * from emp order by name desc
+
+--And--
+select * from emp where id=1 and name='rohit'
+
+--Or--
+select * from emp where id=1 or name='rohit'
+
+--Like--
+select * from emp where name like '_o%'
+
+--Between--
+select * from emp where age between 24 and 25
+
+select * from emp where age>23
+
+select * from emp where name in ('mohit','aman')
