@@ -1,0 +1,39 @@
+
+library(ggplot2)          # ggplot2 is an R library for visualizations train.
+
+
+##dataframe
+cars
+
+#show structure 
+str(cars)
+
+##head : show top 6 rows
+head(cars)
+
+table(cars)
+
+barplot(cars$speed,cars$dist
+        ,col = 'green'
+        ,main = "test graph"
+        ,sub = "test2"
+        ,xlab = "speed"
+        ,ylab = "dist"
+        ,legend.text = cars$speed
+        ,border = .9
+        ,args.legend = "show legend"
+        ,names.arg = cars$speed)
+
+
+pie(cars$speed,cars$dist
+        ,col = 'pink'
+        ,main = "test graph"
+        ,sub = "test2"
+        ,xlab = "speed"
+        ,ylab = "dist"
+        ,legend.text = cars$speed
+        ,border = .9
+        ,args.legend = "show legend"
+        ,names.arg = cars$speed)
+
+
