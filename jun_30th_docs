@@ -1,0 +1,73 @@
+Today's Topic
+===================
+-ETL(extract tranfromation load) Concept
+	E - extract/source
+	T - transformation/logic/conversion
+	L - load / destination 
+
+
+	Read (SQL)
+	Read (excel)
+	Read (csv:comma seperate version)
+	Read (txt)
+
+	Read (json:java script object notatation)
+	Read (xml : extensible markeup langauge)
+	Read from web:
+		https://apps.twitter.com/
+
+		sigup :
+		sigin:
+		create app:
+		
+Consumer Key (API Key)		FIH6V51vkFsOv8Np6tOq7zZYH
+Consumer Secret 						
+
+qJiPinlWPvm7TxzKvUIXwqWofjaBOvjHIxWV50efYWmCjKO7lw
+
+
+Access Token Secret	
+	919434545924935681-MxkqgBs1xsdgeaGi8klDTUm76yIsgBw
+
+Access Token Secret	ZFsbUqybKKs62g669P7WDCUO03WXfD39S6WHhh9DtW4uF
+
+
+
+		
+
+	Read (binary )
+
+	etc.
+
+-vector
+-dataframe
+-visualiztion 
+
+Read RDBMS(SQL)
+====================
+ODBC connnection  : open database connectivity
+
+	servername/host name/ip address: LH7U05CG7300QJQ\DBS92
+	user id:		windows authentication 
+	password: 
+	database:	
+
+	
+Create ODBC Connection:
+	1. control panel 
+	2. Administractive tool
+	3. odbc
+	5. add DSN (data source name) 			: jun30
+	6. choose driver/connector (sql server)
+	7. enter server name 
+	8. choose authencation type
+	9. choose database
+	10. next...next...finish 
+	
+
+
+
+
+
+
+
