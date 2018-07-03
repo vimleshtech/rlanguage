@@ -1,0 +1,50 @@
+install.packages("plot3D")
+library(plot3D)
+
+#iris
+str(iris)
+
+x<- iris$Sepal.Length
+y<- iris$Sepal.Width
+z<- iris$Petal.Length
+
+scatter3D(x, y, z, colvar = NULL, col = "blue",
+          pch = 19, cex = 0.9)
+
+
+scatter3D(x, y, z, bty = "f", colkey = FALSE, main ="bty= 'f'")
+# back panels and grid lines are visible
+scatter3D(x, y, z, bty = "b2", colkey = FALSE, main ="bty= 'b2'" )
+
+
+max(y)
+min(y)
+
+barplot(x,y,col ='blue', xlab = "test",ylab = "abc" )
+
+
+scatter3D(x, y, z, phi = 0, bty = "g", type = "p", 
+          ticktype = "detailed", lwd = 4)
+
+
+##
+library(xlsx)
+setwd("C:\\Users\\vkumar15\\Desktop\\backup")
+
+x<- Health_data$AGE
+y<- Health_data$UD
+z<- Health_data$PAYMENT
+
+scatter3D(x, y, z, phi = 0, bty = "g", type = "l", 
+          ticktype = "detailed", lwd = 4)
+
+
+
+
+
+x<- Health_data$AGE
+y<- Health_data$UD
+pie(x,y,
+        col="yellow",
+        main="piechart")
+
