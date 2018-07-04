@@ -1,0 +1,40 @@
+library("RODBC")
+con <- odbcConnect("test12")
+data <- sqlQuery(con, "select * from employee")
+
+data = sqlQuery(con, "select gender ,count(gender) as coun from employee 
+group by gender ")
+
+
+mydata = aggregate(data,by=list(data$gender,data$coun), mean)
+
+#install.packages("plot3D")
+library("plot3D")
+
+iris
+str(iris)  # 5 vector , 4 numeric, 1 is char 
+
+x<- iris$Sepal.Length
+y<- iris$Sepal.Width
+z<- iris$Petal.Length
+
+length(x)
+
+scatter3D(x, y, z, colvar = NULL, col = "red",
+          pch = 19, cex = 0.5)
+
+scatter3D(x, y, z, bty = "f", colkey = FALSE, main ="bty= 'f'")
+
+scatter3D(x, y, z, bty = "b2", colkey = FALSE, main ="bty= 'b2'")
+
+mdata <- read.csv(file="C:\\Users\\vkumar15\\Desktop\\crime-in-atlanta-2017\\COBRA-YTD2017.csv")
+data = sqlQuery(mdata, "select avg.day ,count(avg.data)  from mdata 
+group by avg.day ")
+
+x1<-mdata$offense_id
+y2<-mdata$Avg.Day
+z3<-mdata$MinOfucr
+##data = sqlQuery(mdata, "select gender ")
+
+scatter3D(x1, y2, z3, bty = "f", colkey = FALSE, main ="bty= 'f'")
+
