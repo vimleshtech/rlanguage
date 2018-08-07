@@ -1,0 +1,110 @@
+
+###kmeans 
+data = read.csv("C:\\Users\\vkumar15\\Documents\\scorecard.csv")
+
+length(data$id)
+avg = data$AVG
+out_kmeans  = c()
+
+i  =1
+while (i<=length(data$i)){
+  
+  out = avg[i]/ sum(avg)
+  out_kmeans=append(out_kmeans,out)
+  i=i+1
+  
+}
+
+##
+
+##Install Packages
+install.packages("tm")  # for text mining
+install.packages("SnowballC") # for text stemming
+install.packages("wordcloud") # word-cloud generator 
+install.packages("RColorBrewer") # color palettes
+##Load Require Library
+library(tm)
+library(SnowballC)
+library(RColorBrewer)
+library(wordcloud)
+
+
+
+x <- seq(-10, 10, by = .1)
+
+# Choose the mean as 2.5 and standard deviation as 0.5.
+y <- dnorm(x, mean = 2.5, sd = 0.5)
+
+plot(x,y)
+
+y <- pnorm(x, mean = 2.5, sd = 2)
+
+##
+x <- seq(0,50,by = 1)
+y <- dbinom(x,50,0.7)
+
+plot(x,y)
+
+
+###
+rainfall <- c(799,1174.8,865.1,1334.6,635.4,918.5,685.5,998.6,784.2,985,882.8,1071)
+
+# Convert it to a time series object.
+rainfall.timeseries <- ts(rainfall,start = c(2012,1),frequency = 12)
+
+plot(rainfall.timeseries, main = "Multiple Time Series")
+
+
+##
+library(party)
+
+input.dat <- readingSkills[c(1:105),]
+
+
+output.tree <- ctree(nativeSpeaker ~ age + shoeSize + score, data = input.dat)
+plot(output.tree)
+
+
+
+##
+library("survival")
+
+print(head(pbc))
+
+str(pbc)
+
+survfit(Surv(pbc$time,pbc$status == 2)~1)
+
+plot(survfit(Surv(pbc$time,pbc$status == 2)~1),col = 'red')
+
+
+##
+library("MASS")
+
+print(str(Cars93))
+car.data <- data.frame(Cars93$AirBags, Cars93$Type)
+
+# Create a table with the needed variables.
+car.data = table(Cars93$AirBags, Cars93$Type) 
+print(car.data)
+
+# Perform the Chi-Square test.
+print(chisq.test(car.data))
+
+pppp
+##
+a = c(175, 168, 168, 190, 156, 181, 182, 175, 174, 179)
+b = c(185, 169, 173, 173, 188, 186, 175, 174, 179, 180)
+
+var.test(a,b)
+
+F test to compare two variances
+
+data: a and b
+F = 2.1028, num df = 9, denom df = 9, p-value = 0.2834
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+  0.5223017 8.4657950
+sample estimates:
+  ratio of variances
+2.102784
