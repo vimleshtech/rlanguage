@@ -1,5 +1,8 @@
 ##
 library(ggplot2)
+
+str(mpg)
+
 theme_set(theme_classic())
 
 # Histogram on a Categorical variable
@@ -87,6 +90,7 @@ left_label <- paste(df$continent, round(df$`1952`),sep=", ")
 right_label <- paste(df$continent, round(df$`1957`),sep=", ")
 df$class <- ifelse((df$`1957` - df$`1952`) < 0, "red", "green")
 
+df
 # Plot
 p <- ggplot(df) + geom_segment(aes(x=1, xend=2, y=`1952`, yend=`1957`, col=class), size=.75, show.legend=F) + 
   geom_vline(xintercept=1, linetype="dashed", size=.1) + 
