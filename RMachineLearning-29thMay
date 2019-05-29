@@ -1,0 +1,113 @@
+
+
+library("caret")
+iris #iris is inbuilt data set 
+str(iris)
+
+dataset <- iris
+
+##col count
+length(dataset)  #columns : vector     5
+
+#row count
+length(dataset$Species)  # 150 rows / observation 
+
+
+#split data in test and validation 
+validation_index <- createDataPartition(dataset$Species, p=0.80, list=FALSE)
+
+validation <- dataset[-validation_index,] #all columns / vector 
+dataset <- dataset[validation_index,] #all columns/vector 
+
+length(validation$Species)
+length(dataset$Species)
+
+
+dim(validation)
+dim(dataset)
+
+
+sapply(dataset, class)
+
+str(dataset)
+
+
+head(dataset)  #return top 5 rows
+
+
+# list the levels for the class
+levels(dataset$Species)
+
+ff <- as.factor( dataset$Species)  #convert to factor 
+
+
+#summarix 
+table(dataset$Species) #group by 
+percentage <- prop.table(table(dataset$Species)) * 100
+
+freq_percentage = cbind(freq=table(dataset$Species), percentage=percentage)
+
+
+
+##summarize the data : show stats
+summary(dataset)
+
+# split input and output
+x <- dataset[,1:4] #all  rows 
+y <- dataset[,5]
+
+
+#format the graph
+par(mfrow=c(1,4))
+
+##iterate and show graph for every numeric column
+for(i in 1:4) {
+  boxplot(x[,i], main=names(iris)[i])
+}
+
+
+#
+plot(y)
+
+
+featurePlot(x=x, y=y, plot="ellipse")
+
+
+
+
+
+
+
+##
+control <- trainControl(method="cv", number=10)
+metric <- "Accuracy"
+
+# a) linear algorithms
+set.seed(7)
+fit.lda <- train(Species~., data=dataset, method="lda", metric=metric, trControl=control)
+# b) nonlinear algorithms
+# CART
+set.seed(7)
+fit.cart <- train(Species~., data=dataset, method="rpart", metric=metric, trControl=control)
+# kNN
+set.seed(7)
+fit.knn <- train(Species~., data=dataset, method="knn", metric=metric, trControl=control)
+# c) advanced algorithms
+# SVM
+set.seed(7)
+fit.svm <- train(Species~., data=dataset, method="svmRadial", metric=metric, trControl=control)
+# Random Forest
+set.seed(7)
+fit.rf <- train(Species~., data=dataset, method="rf", metric=metric, trControl=control)
+
+# summarize accuracy of models
+results <- resamples(list(lda=fit.lda, cart=fit.cart, knn=fit.knn, svm=fit.svm, rf=fit.rf))
+summary(results)
+
+
+
+
+
+
+
+
