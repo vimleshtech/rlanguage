@@ -1,0 +1,54 @@
+SQL : Structural Query language
+=====================================
+RDBMS: Relational database management system
+There are following products:
+	-MY SQL Server
+	-Oracle
+	-MS SQL Server
+	
+SQL Commands:
+================
+show databases;	--show list of existing databases
+create database <newdb>; --create new database
+use <newdb>;  --switch database 
+show tables;  --show list of existing tables
+create table <tbl_name>(		--create table
+ uid int,
+ name varchar(100),
+ gender  varchar(10),
+ salary int	
+);
+
+
+insert into <tbl_name>(uid,name,gender,salary)
+values(1,'nitin','male',33445);
+
+
+select * from <tblname> ; --show data
+
+
+---r code----
+
+
+
+
+install.packages("RMySQL")
+library(RMySQL)
+
+
+mydb = dbConnect(MySQL(), user='root', password='root', dbname='learn99', host='localhost')
+
+
+#dbListTables(mydb)
+
+#dbListFields(mydb, 'users')
+
+rs = dbSendQuery(mydb, "select * from users")
+
+o = fetch(rs, n=-1) #-1 read all data 
+
+o$name
+o$sal
+
+
+
